@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "mixsets",
+	"version": "${version}",
+	"name": "MixSets",
+	"description": "Client-side Fixes and Features to improve your gameplay/other game aspects!",
+	"authors": [
+		"watakak"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/mixsets",
+		"sources": "https://modrinth.com/mod/mixsets",
+		"issues": "https://discord.gg/xG8AEaanfc"
+	},
+	"license": "MIT",
+	"icon": "assets/mixsets/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.watakak.MixSets"
+		]
+	},
+	"mixins": [
+		"mixsets.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.7",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
