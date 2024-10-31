@@ -34,12 +34,39 @@ public class Config {
         }
     }
 
-    public static boolean bool(String key) {
-        return Boolean.parseBoolean(properties.getProperty(key, "false"));
+    public static boolean getBool(String key) {
+        return Boolean.parseBoolean(properties.getProperty(key));
     }
 
     public static void setBool(String key, boolean value) {
         properties.setProperty(key, Boolean.toString(value));
+        saveConfig();
+    }
+
+    public static String getString(String key) {
+        return properties.getProperty(key);
+    }
+
+    public static void setString(String key, String value) {
+        properties.setProperty(key, value);
+        saveConfig();
+    }
+
+    public static int getInt(String key) {
+        return Integer.parseInt(properties.getProperty(key, "0")); // Default to 0 if not found
+    }
+
+    public static void setInt(String key, int value) {
+        properties.setProperty(key, Integer.toString(value));
+        saveConfig();
+    }
+
+    public static float getFloat(String key) {
+        return Float.parseFloat(properties.getProperty(key, "0.0f")); // Default to 0.0f if not found
+    }
+
+    public static void setFloat(String key, float value) {
+        properties.setProperty(key, Float.toString(value));
         saveConfig();
     }
 

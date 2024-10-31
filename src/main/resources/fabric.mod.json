@@ -9,7 +9,7 @@
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/mod/mixsets",
-		"sources": "https://modrinth.com/mod/mixsets",
+		"sources": "https://github.com/watakak/MixSets-Reborn",
 		"issues": "https://discord.gg/xG8AEaanfc"
 	},
 	"license": "MIT",

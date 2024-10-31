@@ -10,9 +10,9 @@ public class MixSets implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ChatManager.registerEvents();
+
 		String loaderName = Utils.getLoader();
-		if (Config.bool("Logs")) {
-			LOGGER.info("Hello " + loaderName + " World!");
-		}
+		LOGGER.info("Hello " + loaderName + " World!");
 	}
 }
