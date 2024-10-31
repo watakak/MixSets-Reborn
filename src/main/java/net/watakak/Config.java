@@ -44,7 +44,8 @@ public class Config {
     }
 
     public static String getString(String key) {
-        return properties.getProperty(key);
+        String value = properties.getProperty(key);
+        return value != null ? Placeholders.parse(value) : null;
     }
 
     public static void setString(String key, String value) {

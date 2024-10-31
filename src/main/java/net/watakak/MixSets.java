@@ -10,7 +10,9 @@ public class MixSets implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ChatManager.registerEvents();
+		TextManager.registerEvents();
+		Updater.checkForUpdates();
+		FPS.register();
 
 		String loaderName = Utils.getLoader();
 		LOGGER.info("Hello " + loaderName + " World!");

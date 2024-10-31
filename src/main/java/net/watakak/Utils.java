@@ -1,22 +1,32 @@
 package net.watakak;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.MinecraftVersion;
+import net.minecraft.client.MinecraftClient;
 
 public class Utils {
     static String getLoader() {
-        if (FabricLoader.getInstance().isModLoaded("fabricloader")) {
-            return "Fabric";
+        return MinecraftClient.getInstance().getGameVersion();
+    }
+
+    static String getPlayerNickname() {
+        MinecraftClient client = MinecraftClient.getInstance();
+        if (client != null && client.player != null) {
+            return client.player.getName().getString();
         }
-        else if (FabricLoader.getInstance().isModLoaded("quilt")) {
-            return "Quilt";
-        }
-        else if (FabricLoader.getInstance().isModLoaded("forge")) {
-            return "Forge";
-        }
-        else if (FabricLoader.getInstance().isModLoaded("neoforge")) {
-            return "NeoForge";
-        }
-        else {
-            return "MixSets";
-        }
+        return "Player";
+    }
+
+    static String getModVersion() {
+        return FabricLoader.getInstance().getModContainer(MixSets.MOD_ID)
+                .map(container -> container.getMetadata().getVersion().getFriendlyString())
+                .orElse("unknown");
+    }
+
+    static String getMinecraftVersion() {
+        return MinecraftVersion.CURRENT.getName();
+    }
+
+    static String getLanguage() {
+        return MinecraftClient.getInstance().getLanguageManager().getLanguage();
     }
 }
